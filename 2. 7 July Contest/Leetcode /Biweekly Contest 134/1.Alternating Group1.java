@@ -1,3 +1,4 @@
+//learned from leetcode solutions
 class Solution {
     public int numberOfAlternatingGroups(int[] colors) {
         int n = colors.length;
