@@ -1,3 +1,4 @@
+//learned from leetcode solutions
 class Solution {
   //s = "dart", k = 3
     public String getEncryptedString(String s, int k) {
