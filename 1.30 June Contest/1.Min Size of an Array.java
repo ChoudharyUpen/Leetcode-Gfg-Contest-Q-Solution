@@ -3,6 +3,9 @@
 // every el will probably eat up other el
 // thus n = even, ans is 0 else 1
 
+
+//GFG contest
+
 class Solution {
     public static int MinSize(int n, int[] a) {
         Map<Integer, Integer> map = new HashMap<>();
