@@ -2,7 +2,7 @@ Input: red = 2, blue = 4
 
 Output: 3
 
-
+//leetcode contest weekly contest
 
 
 
