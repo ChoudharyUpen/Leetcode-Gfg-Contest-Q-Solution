@@ -1,4 +1,11 @@
 //learned from leetcode solutions
+//leetcode
+//Weekly Contest 405
+
+
+
+
+
 class Solution {
   //s = "dart", k = 3
     public String getEncryptedString(String s, int k) {
