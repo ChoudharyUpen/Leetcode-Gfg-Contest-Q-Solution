@@ -31,6 +31,7 @@ class Solution {
             current = current.next; // Next node par move karte hain
         }
 
+        //sabse phela usmai 0 hai tau zero ko hata ka uski agli value 
         return dummy.next; // Naya head return karte hain, dummy node ko skip karke
     }
 }
