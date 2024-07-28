@@ -1,0 +1,68 @@
+//leetcode weekly 408
+//my code was but giving tle error
+//better solution downside
+class Solution {
+    public int nonSpecialCount(int l, int r) {
+        ArrayList<Integer> a = new ArrayList<>();
+        int count = 0;
+        int number = l;
+        int traverse = r - l + 1;
+
+        while (traverse > 0) {
+            for (int i = 1; i < number; i++) {
+                if (number % i == 0) {
+                    a.add(i);
+                }
+            }
+
+            if (a.size() != 2) {
+                count++;
+            }
+
+            a.clear();
+            traverse--;
+            number++;
+        }
+
+        return count;
+    }
+}
+
+
+
+//best solution
+
+class Solution {
+
+    // Yeh method check karta hai agar x prime number hai ya nahi
+    private boolean isP(int x) {
+        // Agar x 1 hai toh false return karo kyunki 1 prime nahi hota
+        if (x == 1)
+            return false;
+
+        // 2 se lekar sqrt(x) tak check karo agar x kisi se divide hota hai
+        for (int i = 2; i * i <= x; i++) {
+            // Agar x % i == 0 hai toh x prime nahi hai
+            if (x % i == 0)
+                return false;
+        }
+
+        // Agar x kisi se divide nahi hota toh prime hai
+        return true;
+    }
+
+    // Yeh method count karta hai non-special numbers ko range [l, r] mein
+    public int nonSpecialCount(int l, int r) {
+        int ans = 0; // Special numbers ka count rakhta hai
+
+        // Loop sqrt(l) se lekar sqrt(r) tak
+        for (int i = (int) Math.sqrt(l); i * i <= r; i++) {
+            // Agar i*i range [l, r] mein hai aur i prime hai toh count increment karo
+            if (i * i >= l && isP(i))
+                ans++;
+        }
+
+        // Total numbers - special numbers ka count return karo
+        return r - l + 1 - ans;
+    }
+}
